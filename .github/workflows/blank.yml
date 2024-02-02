@@ -29,7 +29,7 @@ jobs:
       - name: "job2 task1"
         env:
           my_name: ${{env.PUBLIC_URL}}
-        run: echo ${{env.PUBLIC_URL}}
+        run: echo ${{env.my_name}}
         
 
 
