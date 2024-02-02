@@ -28,8 +28,10 @@ jobs:
     steps:
       - name: "job2 task1"
         env:
-          my_name: ${{ env.PUBLIC_URL }}
-        run: echo "publ_url=${{ env.PUBLIC_URL }}"
+          my_name: ${{ vars.PUBLIC_URL }}
+        run: |
+          echo "publ_url=${{ vars.PUBLIC_URL }}"
+          echo "$my_name"
         
 
 
