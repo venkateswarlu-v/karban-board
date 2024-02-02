@@ -1,0 +1,33 @@
+name: "My deployment flow"
+
+
+on:
+  pull_request:
+  push:
+
+
+jobs:
+  job1:
+    name: "Job1"
+    runs-on: ubuntu-latest
+    outputs: 
+      job1_task1_output : ${{ steps.task1.outputs.task1_output }}
+    steps:
+      - name: "task1"
+        id: task1
+        run: |
+          echo "task1"
+          echo "task1_output=my_task1" >> $GITHUB_OUTPUT
+      - name: "task2"
+        run: echo "task2"
+  job2:
+    name: "My Job2"
+    needs: [job1]
+    runs-on: ubuntu-latest
+    steps:
+      - name: "job2 task1"
+        run: echo ${{ needs.job1.outputs.job1_task1_output }}
+        
+
+
+
