@@ -28,7 +28,7 @@ jobs:
     steps:
       - name: "job2 task1"
         env:
-          my_name: ${{env.PUBLIC_URL}}
+          my_name: ${{ env.PUBLIC_URL }}
         run: echo ${{env.my_name}}
         
 
