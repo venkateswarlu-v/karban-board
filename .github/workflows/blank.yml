@@ -24,8 +24,11 @@ jobs:
     name: "My Job2"
     needs: [job1]
     runs-on: ubuntu-latest
+    environment: prod
     steps:
       - name: "job2 task1"
+        env:
+          my_name: ${{env.PUBLIC_URL}}
         run: echo ${{env.PUBLIC_URL}}
         
 
