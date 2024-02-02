@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "job2 task1"
-        run: echo ${{ needs.job1.outputs.job1_task1_output }}
+        run: echo ${{env.PUBLIC_URL}}
         
 
 
