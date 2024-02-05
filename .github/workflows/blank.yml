@@ -6,7 +6,6 @@ on:
   push:
   workflow_dispatch:
     inputs:
-      
       tag:
         type: choice
         options:
@@ -16,6 +15,7 @@ on:
       environment:
         description: "environment name"
         type: environment
+        default: "prod"
         required: true
       
      
