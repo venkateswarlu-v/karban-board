@@ -30,9 +30,9 @@ jobs:
     steps:
       - name: "job2 task1"
         env:
-          env_context_value: ${{ env.PUBLIC_URL }}
+          env_context_value: ${{ vars.PUBLIC_URL }}
         run: |
-          echo "vars context ${{ env.PUBLIC_URL }}"
+          echo "vars context ${{ vars.PUBLIC_URL }}"
           echo "env vars context value ${env_context_value}"
         
 
