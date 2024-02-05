@@ -29,6 +29,12 @@ jobs:
     outputs: 
       job1_task1_output : ${{ steps.task1.outputs.task1_output }}
     steps:
+      - name: "Checkout repo"
+        uses: actions/checkout@v4
+      - name: "Install node"
+        uses: actions/setup-node@v3
+        with:
+          node-version: "14"
       - name: "task1"
         id: task1
         env:
