@@ -4,6 +4,17 @@ name: "My deployment flow"
 on:
   pull_request:
   push:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: environment
+        description : "Environment to deploy"
+      tags:
+        type: choice
+        options:
+          - "choice 1"
+          - "choice 2"
+      
 
 jobs:
   job1:
