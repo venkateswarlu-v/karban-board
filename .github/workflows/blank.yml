@@ -21,8 +21,6 @@ jobs:
           echo "task1_output=$tag" >> $GITHUB_OUTPUT
       - name: "task2"
         run: echo "task2"
-      - name: "Build"
-        run: yarn build
   job2:
     name: "My Job2"
     needs: [job1]
