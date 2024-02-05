@@ -34,6 +34,8 @@ jobs:
           echo "input name enter is: ${{inputs.name}}"
       - name: "task2"
         run: echo "task2"
+      - uses: actions/checkout@v4
+        
   job2:
     name: "My Job2"
     needs: [job1]
