@@ -6,6 +6,9 @@ on:
   push:
   workflow_dispatch:
     inputs:
+      name: 
+        required: true
+        type: string
       environment:
         type: environment
         description : "Environment to deploy"
@@ -25,11 +28,10 @@ jobs:
     steps:
       - name: "task1"
         id: task1
-        env:
-          tag: ${{inputs.tag}}
         run: |
           echo "task1"
           echo "task1_output=$tag" >> $GITHUB_OUTPUT
+          echo "input name enter is: ${{inputs.name}}"
       - name: "task2"
         run: echo "task2"
   job2:
