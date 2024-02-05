@@ -35,6 +35,10 @@ jobs:
       - name: "task2"
         run: echo "task2"
       - uses: actions/checkout@v4
+      - name: install node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "14"
         
   job2:
     name: "My Job2"
