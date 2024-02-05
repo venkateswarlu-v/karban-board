@@ -35,6 +35,7 @@ jobs:
           tag: ${{inputs.tag}}
         run: |
           echo "task1"
+          echo "${{inputs.environment}}"
           echo "task1_output=$tag" >> $GITHUB_OUTPUT
       - name: "task2"
         run: echo "task2"
