@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       
-      tags:
+      tag:
         type: choice
         options:
           - "choice1"
@@ -31,16 +31,18 @@ jobs:
     steps:
       - name: "task1"
         id: task1
+        env:
+          tag: ${{inputs.tag}}
         run: |
           echo "task1"
-          echo "task1_output=my_task1" >> $GITHUB_OUTPUT
+          echo "task1_output=$tag" >> $GITHUB_OUTPUT
       - name: "task2"
         run: echo "task2"
   job2:
     name: "My Job2"
     needs: [job1]
     runs-on: ubuntu-latest
-    environment: prod
+    environment: ${{inputs.environment}}
     steps:
       - name: "job2 task1"
         env:
