@@ -34,6 +34,7 @@ jobs:
           echo "vars context ${{ vars.PUBLIC_URL }}"
           echo "from env context ${{env.PUBLIC_URL}}"
           echo "${{secrets.MY_SECRET}}"
+          echo "repo var ${{vars.REPO_VAR_URL}}"
           echo "vars_context_value: ${vars_context_value}"
           echo "env_context_value: ${env_context_value}"
         
