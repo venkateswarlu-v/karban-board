@@ -51,6 +51,7 @@ jobs:
           env_context_value: ${{ vars.PUBLIC_URL }}
         run: |
           echo "vars context ${{ vars.PUBLIC_URL }}"
+          echo "${GITHUB_REF_NAME}"
           echo "env vars context value ${env_context_value}"
           echo "secret is ${{secrets.MY_SECRET}}"
           echo "${{vars.REPO_VAR_URL}}"
